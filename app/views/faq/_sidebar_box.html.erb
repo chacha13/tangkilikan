@@ -1,0 +1,14 @@
+<div class="sidebar_box">
+<h2>
+<% unless hide_edit_links? %>
+<span class="edit_link">
+	<%= link_to "(baguhin)", :controller => "faq", :action => "edit" %>
+</span>
+	<% end %>
+<span class="header"><%= sidebar_box.humanize %></span>
+<br clear="all">
+</h2>
+<div class="faq_answer">
+		<%= sanitize @faq[sidebar_box] %>
+</div>
+</div>

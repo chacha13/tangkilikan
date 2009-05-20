@@ -1,0 +1,7 @@
+<div class="faq">
+<%= answer_text_area.humanize %>:
+<%= submit_tag "Update", :align => "right" %>
+<br />
+<%= form.text_area answer_text_area, :rows => Faq::TEXT_ROWS,
+:cols => Faq::TEXT_COLS %>
+</div>
