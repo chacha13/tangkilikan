@@ -1,0 +1,33 @@
+<% form_tag({ :action => "browse" }, :method => "get") do %>
+<fieldset>
+<legend>Browse</legend>
+<div class="form_row">
+		<label for="age">Edad:</label>
+		<%= text_field_tag "min_age", params[:min_age], :size => 2 %>
+		&ndash;
+		<%= text_field_tag "max_age", params[:max_age], :size => 2 %>
+</div>
+
+<div class="form_row">
+		<label for="kasarian">Kasarian:</label>
+		<%= radio_button_tag :kasarian, "Lalaki",
+		params[:kasarian] == 'Lalaki',
+		:id => "Lalaki" %>Lalaki
+		<%= radio_button_tag :kasarian, "Babae",
+		params[:kasarian] == 'Babae',
+		:id => "Babae" %>Babae
+</div>
+<div class="form_row">
+		<label for="occupation">Trabaho:</label>
+		<%= text_field_tag "trabaho", params[:trabaho] %>
+		
+</div>
+<div class="form_row">
+		<label for="city">Lungsod:</label>
+		<%= text_field_tag "city", params[:city], :size => 20 %>
+		
+</div>
+
+	<%= submit_tag "Browse", :class => "submit" %>
+</fieldset>
+<% end %>
