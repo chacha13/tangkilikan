@@ -1,0 +1,21 @@
+<div id="left_column">
+	<%= render :partial => 'avatar/sidebar_box' %>
+	
+<%= render :partial => 'faq/sidebar_box', :collection => Faq::FAVORITES %>
+</div>
+<div id="main_content">
+<div id="full_name">
+<%= h @spec.full_name.or_else(@user.user_name) %>
+</div>
+<div id="occupation">
+<%= h @spec.trabaho %>
+</div>
+<div id="location">
+<%= h @spec.location %>
+</div>
+<hr noshade />
+Bio:
+<div id="bio">
+<%= sanitize @faq.bio %>
+</div>
+</div>
