@@ -1,0 +1,10 @@
+<% if @users %>
+  <p>
+  Found <%= pluralize(@users.total_entries, "match") %>.
+  <% if paginated? %>
+		<% first = @pages.current_page.first_item %>
+		<% last = @pages.current_page.last_item %>
+		Displaying users <%= first %>&ndash;<%= last %>.	
+ <% end %>
+ </p>
+<% end %>

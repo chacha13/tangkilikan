@@ -1,0 +1,27 @@
+<% if @users and not @users.empty? %>
+<table class="users" border="0" cellpadding="5" cellspacing="1">
+<tr class="header">
+<th>Pangalan</th> <th>Edad</th> <th>Kasarian</th> <th>Tirahan</th>
+</tr>
+<% @users.each do |user| %>
+<tr class="<%= cycle('odd', 'even') %>">
+<td><%= link_to user.name, profile_for(user) %></td>
+<td><%= user.spec.age %></td>
+<td><%= user.spec.kasarian %></td>
+<td><%= user.spec.location %></td>
+</tr>
+<% end %>
+</table>
+<% end %>
+<% if paginated? %>
+<tr>
+<td colspan="4" align="right">
+ <%= will_paginate @users %>
+ <%= if search
+	 will_paginate @users	
+	end
+ %>
+</td>
+</tr>
+</table>
+<% end %>
