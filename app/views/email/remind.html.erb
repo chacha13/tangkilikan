@@ -1,0 +1,12 @@
+<% form_for :user do |form| %>
+<fieldset>
+<legend><%= @title %></legend>
+<div class="form_row">
+<label for="email">Email:</label>
+<%= form.text_field :email, :size => User::EMAIL_SIZE %>
+</div>
+<div class="form_row">
+<%= submit_tag "Email Me!", :class => "submit" %>
+</div>
+</fieldset>
+<% end %>
