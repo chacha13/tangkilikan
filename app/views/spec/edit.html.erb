@@ -1,0 +1,27 @@
+<% form_for :spec do |form| %>
+<fieldset>
+<legend><%= @title %></legend>
+<%= error_messages_for 'spec' %>
+<%= text_field_for form, "pangalan" %>
+<%= text_field_for form, "apelyido" %>
+
+<div class="form_row">
+<label for="gender">Kasarian:</label>
+<%= radio_button :spec, :kasarian, "Lalaki" %> Lalaki
+<%= radio_button :spec, :kasarian, "Babae" %> Babae
+</div>
+<div class="form_row">
+		<label for="birthdate">Kaarawan:</label>
+			<%= date_select :spec, :kaarawan,
+							:start_year => Spec::START_YEAR,
+							:end_year => Time.now.year,
+							:include_blank => true,
+							:order => [:month, :day, :year] %>
+</div>
+<%= text_field_for form, "trabaho" %>
+<%= text_field_for form, "kalye" %>
+<%= text_field_for form, "lungsod" %>
+<%= text_field_for form, "probinsya" %>
+<%= submit_tag "Baguhin", :class => "submit" %>
+</fieldset>
+<% end %>
