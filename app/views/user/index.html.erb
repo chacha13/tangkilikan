@@ -1,0 +1,68 @@
+<h1>User Hub</h1>
+<div id="left_column">
+<div class="sidebar_box">
+<h2>
+<span class="header">Account Info</span>
+<span class="edit_link"><%= link_to "(baguhin)", :action => "edit" %></span>
+<br clear="all" />
+</h2>
+<div class="sidebar_box_contents">
+<table>
+<tr>
+<td class="label">User name:</td>
+<td><%= @user.user_name %></td>
+</tr>
+<tr>
+<td class="label">Email:</td>
+<td><%= @user.email %></td>
+</tr>
+<tr>
+<td class="label">Password:</td>
+<td>********</td>
+</tr>
+</table>
+</div>
+</div>
+<%= render :partial => 'avatar/sidebar_box' %>
+<div class="sidebar_box">
+<h2>
+<span class="header">Info</span>
+<span class="edit_link">
+<%= link_to "(baguhin)", :controller => "spec", :action => "edit" %>
+</span>
+<br clear="all" />
+</h2>
+<div class="sidebar_box_contents">
+<table>
+<%= render :partial => "spec/field_row",
+:collection => Spec::ALL_FIELDS %>
+</table>
+</div>
+</div>
+<%= render :partial => 'faq/sidebar_box', :collection => Faq::FAVORITES %>
+</div>
+<div id="main_content">
+<div id="full_name">
+	<%= h @spec.full_name.or_else("Pangalan") %>
+	
+</div>
+<div id="occupation">
+	<%= h @spec.trabaho %>
+</div>
+<div id="location">
+	<%= h @spec.location.or_else("Tirahan") %>
+</div>
+<span class="edit_link">
+	<%= link_to "(baguhin)", :controller => "spec", :action => "edit" %>
+</span>
+<hr noshade />
+Profile URL: <%= link_to profile_for(@user), profile_for(@user) %>
+<hr noshade />
+My Bio:
+<span class="edit_link">
+	<%= link_to "(baguhin)", :controller => "faq", :action => "edit" %>
+</span>
+<div id="bio" class="faq_answer">
+	<%= sanitize @faq.bio %>
+</div>
+</div>
