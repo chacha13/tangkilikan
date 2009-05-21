@@ -1,0 +1,193 @@
+body {
+font-family: Arial;
+background: #eee;
+margin: 0;
+text-align: left;
+}
+#whole_page {
+width: 50em;
+margin: auto;
+padding: 0;
+text-align: left;
+border-width: 1px 1px 1px 1px;
+border-color: pink;
+border-style: solid;
+}
+#header {
+color: gold;
+background: gray; /* No "ruby" defined in HTML color names! KR Bamboo*/
+font-size: 27pt;
+font-family: KR Bamboo;
+font-weight: bold;
+padding: 0.25em;
+margin-bottom: 0;
+}
+#nav {
+color: black;
+font-size: 11pt;
+font-weight: bold;
+background: #eee;
+padding: 0.2em;
+}
+#nav a, #nav a:visited {
+color: #993366;
+text-decoration: none;
+}
+#nav a:hover {
+border-bottom: 2px underline maroon;
+}
+#content {
+height: 100%;
+background: white;
+padding: 1em;
+}
+#content h1 {
+font-size: 14pt;
+}
+/* Hack to get IE to display fieldset/legend correctly */
+html fieldset {
+position: relative;
+}
+html legend {
+position:absolute;
+top: -1em;
+left: .5em;
+}
+html fieldset {
+position: relative;
+margin-top:1em;
+padding-top:2em;
+padding-bottom: 2em;
+}
+/* Form Styles */
+fieldset {
+background: #eee;
+}
+legend {
+color: white;
+font-weight: bold;
+background: #CC66CC;
+padding: .4em 1em;
+}
+label {
+width: 10em;
+float: left;
+text-align: right;
+margin-right: 0.2em;
+display: block;
+}
+.form_row {
+white-space: nowrap;
+padding-bottom: .5em;
+}
+.submit {
+margin-left: 15em;
+}
+/* Debug Style */
+.debug_dump {
+text-align: left;
+border-top: 1px dashed black;
+background: gray;
+margin: 0;
+padding: 0.5em;
+}
+/* Error Reporting Styles */
+.fieldWithErrors {
+margin: 2px;
+padding: 2px;
+background-color: red;
+display: table;
+}
+#errorExplanation {
+border: 2px solid red;
+padding: 7px;
+padding-bottom: 12px;
+margin-bottom: 20px;
+background-color: #f0f0f0;
+}
+#errorExplanation h2 {
+text-align: left;
+font-weight: bold;
+padding: 5px 5px 5px 15px;
+font-size: 12pt;
+margin: -7px;
+background-color: #c00;
+color: #fff;
+}
+#errorExplanation p {
+color: #333;
+margin-bottom: 0;
+padding: 5px;
+}
+#errorExplanation ul li {
+font-size: 11pt;
+list-style: square;
+}
+/* Flash Notice Style */
+#notice {
+border: 1px solid green;
+padding: 1em;
+margin: 1em;
+margin-bottom: 2em;
+background-color: lightgray;
+font: bold smaller sans-serif;
+}
+/* Debug Style */
+#debug {
+margin-top: 1em;
+margin-left: auto;
+}
+#debug a, #debug a.visited {
+text-decoration: none;
+color: black;
+}
+fieldset.debug_info {
+text-align: left;
+margin: 1em;
+background: gray;
+}
+/* Community Styles */
+a, a#visited {
+color: maroon;
+text-decoration: none;
+}
+.letter, .letter_current {
+width: 1em;
+text-align: center;
+border: 1px solid pink;
+background: #fff;
+padding: 5px 2px 1px 2px;
+float: left;
+margin: 2px
+}
+.letter:hover {
+background: #CC66CC;
+}
+.letter_current {
+background: #fe4;
+font-weight: bold;
+border: 1px solid pink;
+}
+table.users {
+background: #fff;
+margin-left: 2em;
+}
+table.users td.bottom {
+border-top: 1px solid #999;
+padding-top: 10px;
+}
+table.users th {
+color: white;
+background: #CC66CC;
+font-weight: normal;
+}
+table.users th a {
+color: white;
+text-decoration: underline;
+}
+table.users tr.even {
+background: #ddd;
+}
+table.users tr.odd {
+background: white;
+}
