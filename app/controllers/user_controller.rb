@@ -2,8 +2,8 @@ require 'digest/sha1'
 class UserController < ApplicationController
  include ApplicationHelper 
  helper :profile, :avatar
- before_filter :protect, :only => [ :edit ]
- 
+ before_filter :protect, :only => [ :edit ] 
+
   def index
 @title = "Tangkilikan User Hub"
 @user = User.find(session[:user_id])
@@ -29,11 +29,13 @@ end
       @title = "Log in sa Tangkilikan"
       if request.get?
           @user = User.new(:remember_me => remember_me_string)
-      elsif param_posted?(:user)
+       
+       elsif param_posted?(:user)
           @user = User.new(params[:user])
-          user = User.find_by_user_name_and_password(@user.user_name,
-                                                       @user.password)
-      if user 
+           user = User.find_by_user_name(@user.user_name)
+ 
+
+      if user and user.password_matches?(@user.password)
           user.login!(session)
           @user.remember_me? ? user.remember!(cookies) : user.forget! (cookies)
           flash[:notice] = "Si #{user.user_name} ay nag-login!"
