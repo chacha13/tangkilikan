@@ -1,4 +1,4 @@
-require 'digest/sha1'
+require 'digest'
 class User < ActiveRecord::Base
 
 has_one :spec
@@ -26,6 +26,8 @@ EMAIL_SIZE = 30
 USERNAME_RANGE = USER_NAME_MIN_LENGTH...USER_NAME_MAX_LENGTH
 validates_uniqueness_of :user_name, :email
 validates_confirmation_of :password
+validates_presence_of :password
+
 # Return true if the password from params is correct.
 def correct_password?(params)
     current_password = params[:user][:current_password]
@@ -48,6 +50,30 @@ def password_errors(params)
 # The current password is incorrect, so add an error message.
     errors.add(:current_password, "ay mali")
 end
+# Encrypt password before save
+ 
+  def before_save
+ 
+    if (self.salt == nil)
+ 
+      self.salt = random_numbers(5)
+
+      self.hashed_password = Digest::MD5.hexdigest(self.salt + self.password )
+ 
+    else
+ 
+       self.hashed_password = Digest::MD5.hexdigest(salt +  self.password )
+ 
+    end
+ 
+end
+  # Verify password matches before login
+ 
+  def password_matches?(password_to_match)
+ 
+    self.hashed_password == Digest::MD5.hexdigest(self.salt + password_to_match)
+ 
+  end
 # Log a user in.                    
 def login!(session)
     session[:user_id] = id
@@ -90,10 +116,25 @@ def remember!(cookies)
   def remember_me?
       remember_me == "1"
   end
+  
 private
 # Generate a unique identifier for a user.
     def unique_identifier
           Digest::SHA1.hexdigest("#{user_name}:#{password}")
     end
-# Return a sensible name for the user.
+
+ 
+  def random_numbers(len)
+ 
+    numbers = ("0".."9").to_a
+ 
+    newrand = ""
+ 
+    1.upto(len) { |i| newrand << numbers[rand(numbers.size - 1)] }
+ 
+    return newrand
+ 
+  end
+ 
+
 end
