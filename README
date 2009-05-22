@@ -1,3 +1,12 @@
-Paano iinstall ang Tangkilikan sa iyong PC..
+How to install Tangkilikan site to your PC
 
-Unang una: Kailangan munang i-fork ang aking account sa GitHub
+This site is working under Windows platform. Windows users are so lucky for having less burden because 
+of Shila and Shila and Charlie and Charlie.
+
+FIRST you have to have cygwin up and running in your PC and to get cygwin click this --> http://www.cygwin.com/setup.exe
+Then you should also have Git running on your PCs, http://code.google.com/p/msysgit/downloads/list <---
+this link provides Git downloads, all you have to do is click that.
+
+
+
+
