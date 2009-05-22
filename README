@@ -1,11 +1,17 @@
 How to install Tangkilikan site to your PC
 
-This site is working under Windows platform. Windows users are so lucky for having less burden because 
+This site is working under Windows platform. Windows users are so lucky for having lesser burden because 
 of Shila and Shila and Charlie and Charlie.
 
 FIRST you have to have cygwin up and running in your PC and to get cygwin click this --> http://www.cygwin.com/setup.exe
 Then you should also have Git running on your PCs, http://code.google.com/p/msysgit/downloads/list <---
 this link provides Git downloads, all you have to do is click that.
+
+To clone Tangkilikan follot this: Open GitBash --> type in there [git clone git://github.com/chacha13/tangkilikan.git
+After you have done all the installations of the said softwares, it's time to get into bigger trouble.
+
+YOU must have Ruby on Rails in your PC: (http://www.rubyonrails.org/down)
+Then you must also have RubyGems to make it working properly
 
 
 
