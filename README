@@ -19,6 +19,7 @@ http://rubyforge.org/frs/?group_id=1028
 You must choose the label with mswin32 blah blah gem, to make it working properly.
 Then place it in your Ruby directory and open command prompt, then type:
 
+What's so good thing about being good. I don't know.
 gem install ferret-0.11.6-mswin32.gem
 
 Then install acts_as_ferret
